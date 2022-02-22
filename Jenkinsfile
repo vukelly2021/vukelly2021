@@ -7,7 +7,7 @@ pipeline {
                 //docker { image 'maven:3.8.1-adoptopenjdk-11' }
             //}
             steps {
-                sh 'mvn --version'
+                sh 'python --version'
             }
         }
        /* stage('Front-end') {
