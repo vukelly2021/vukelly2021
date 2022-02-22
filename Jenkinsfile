@@ -1,11 +1,11 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Back-end') {
-            agent {
-                any
+           // agent {
+             //   any
                 //docker { image 'maven:3.8.1-adoptopenjdk-11' }
-            }
+            //}
             steps {
                 sh 'mvn --version'
             }
