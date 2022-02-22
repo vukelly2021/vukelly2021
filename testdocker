@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile { 
-     filename "os-patch-test/docker/ansible/Dockerfile" 
+     filename "Dockerfile" 
      args '-u 1000:1000' // Runtime args
         }
      }
