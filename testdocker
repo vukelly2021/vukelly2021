@@ -1,0 +1,32 @@
+pipeline {
+  agent {
+    dockerfile { 
+     filename "os-patch-test/docker/ansible/Dockerfile" 
+     args '-u 1000:1000' // Runtime args
+        }
+     }
+
+  stages {
+    stage ('Set Build Name') {
+      steps {
+        script {
+          currentBuild.displayName = "Test build"
+        }
+      }
+    }
+    stage('Test') {
+      steps {            
+        script {
+             sh 'ansible --version'
+             echo "test"
+          }
+         }
+        }
+    }
+ 
+      cleanup {
+        cleanWs()
+       }
+
+  }
+
